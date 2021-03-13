@@ -13,4 +13,5 @@ const mix = require('laravel-mix');
 
  mix.browserSync('vuesplash.test')
  .js('resources/js/app.js', 'public/js')
+ .js('resources/js/router.js','public/js')
  .version()

@@ -34,6 +34,9 @@
       </tr>
       </tbody>
     </table>
+    <div class="logout">
+      <button type="button" @click="logout">ログアウト</button>
+    </div>
   </div>
 </template>
 
@@ -43,6 +46,7 @@ export default {
     return {
       // 空配列
       articles: [],
+      user: "",
     };
   },
   methods: {
@@ -58,6 +62,17 @@ export default {
         this.getArticles();
       });
     },
+    logout(){
+      axios.post('api/logout')
+        .then(res =>{
+          console.log(res);
+          localStorage.removeItem('auth');
+          this.$router.push('/login');
+        })
+        .catch(error =>{
+          console.log(error);
+        });
+    }
   },
 
   mounted() {
