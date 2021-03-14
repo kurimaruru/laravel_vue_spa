@@ -34,10 +34,15 @@
       </tr>
       </tbody>
     </table>
-    <div class="logout">
-      <button type="button" @click="logout">ログアウト</button>
-    </div>
+    <div class="row">
+      <div class="logout">
+        <button type="button" @click="logout" class="btn btn-primary">ログアウト</button>
+      </div>
+      <router-link v-bind:to="{name: 'article.create'}">
+        <button class="btn btn-success">ADD</button>
+      </router-link>
   </div>
+    </div>
 </template>
 
 <script>

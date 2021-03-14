@@ -111,9 +111,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      // 空配列
+      articles: []
+    };
+  },
+  methods: {
+    // 記事一覧APIにリクエスト
+    getArticles: function getArticles() {
+      var _this = this;
+
+      axios.get("/api/articles").then(function (res) {
+        _this.articles = res.data;
+      });
+    }
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    // メソッドの呼び出し
+    this.getArticles();
   }
 });
 
@@ -138,6 +169,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -151,6 +184,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -437,6 +475,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -975,28 +1015,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("table", { staticClass: "table table-hover" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        _vm._l(_vm.articles, function(article, index) {
+          return _c("tr", { key: index }, [
+            _c("td", [_vm._v(_vm._s(article.title))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(article.content))]),
+            _vm._v(" "),
+            _c(
+              "td",
+              [
+                _c(
+                  "router-link",
+                  {
+                    attrs: {
+                      to: {
+                        name: "article.show",
+                        params: { articleId: article.id }
+                      }
+                    }
+                  },
+                  [
+                    _c("button", { staticClass: "btn btn-primary" }, [
+                      _vm._v("Show")
+                    ])
+                  ]
+                )
+              ],
+              1
+            )
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
+    return _c("thead", { staticClass: "thead-light" }, [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Content")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")])
       ])
     ])
   }
@@ -1022,20 +1093,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "header", staticStyle: { "background-color": "black" } },
-    [
-      _c("h1", { staticStyle: { color: "white" } }, [_vm._v("kurimaru")]),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: { name: "article.create" } } }, [
-        _c("button", { staticClass: "btn btn-success" }, [_vm._v("ADD")])
-      ])
-    ],
-    1
-  )
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "div",
+        {
+          staticClass: "jumbotron jumbotron-fluid",
+          staticStyle: {
+            "background-image": "url('/img/flower.jpeg')",
+            "background-repeat": "no-repeat",
+            "background-size": "cover"
+          }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "container", staticStyle: { color: "white" } },
+            [
+              _c("h1", { staticClass: "display-4" }, [
+                _vm._v("Kurimaru Engineering")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "lead" }, [
+                _vm._v("Kurimaruのプログラミング情報ポータルサイト")
+              ])
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -1139,11 +1233,28 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "logout" }, [
-      _c("button", { attrs: { type: "button" }, on: { click: _vm.logout } }, [
-        _vm._v("ログアウト")
-      ])
-    ])
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c("div", { staticClass: "logout" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: { type: "button" },
+              on: { click: _vm.logout }
+            },
+            [_vm._v("ログアウト")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: { name: "article.create" } } }, [
+          _c("button", { staticClass: "btn btn-success" }, [_vm._v("ADD")])
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -1695,77 +1806,97 @@ var render = function() {
         }
       },
       [
-        _c("div", [
-          _c("label", [_vm._v("email")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.email,
-                expression: "email"
-              }
-            ],
-            attrs: { type: "text" },
-            domProps: { value: _vm.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+        _c("div", { staticClass: "form-row align-items-center" }, [
+          _c("div", { staticClass: "col-sm-3 my-1" }, [
+            _c(
+              "label",
+              { staticClass: "sr-only", attrs: { for: "inlineFormInputName" } },
+              [_vm._v("email")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.email,
+                  expression: "email"
                 }
-                _vm.email = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm.errors.email
-            ? _c("span", [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.errors.email[0]) +
-                    "\n            "
-                )
-              ])
-            : _vm._e()
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("label", [_vm._v("パスワード")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.password,
-                expression: "password"
-              }
-            ],
-            attrs: { type: "password" },
-            domProps: { value: _vm.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "text",
+                id: "inlineFormInputName",
+                placeholder: "E-mail"
+              },
+              domProps: { value: _vm.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.email = $event.target.value
                 }
-                _vm.password = $event.target.value
               }
-            }
-          }),
+            }),
+            _vm._v(" "),
+            _vm.errors.email
+              ? _c("span", [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.errors.email[0]) +
+                      "\n                "
+                  )
+                ])
+              : _vm._e()
+          ]),
           _vm._v(" "),
-          _vm.errors.password
-            ? _c("span", [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.errors.password[0]) +
-                    "\n            "
-                )
-              ])
-            : _vm._e()
-        ]),
-        _vm._v(" "),
-        _c("button", [_vm._v("ログイン")])
+          _c("div", { staticClass: "col-sm-3 my-1" }, [
+            _c(
+              "label",
+              { staticClass: "sr-only", attrs: { for: "inlineFormInputName" } },
+              [_vm._v("パスワード")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.password,
+                  expression: "password"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: {
+                type: "password",
+                id: "inlineFormInputName",
+                placeholder: "Pssword"
+              },
+              domProps: { value: _vm.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.password = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.errors.password
+              ? _c("span", [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.errors.password[0]) +
+                      "\n                "
+                  )
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-primary" }, [_vm._v("ログイン")])
+        ])
       ]
     )
   ])

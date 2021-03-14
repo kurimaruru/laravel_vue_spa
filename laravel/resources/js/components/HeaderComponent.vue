@@ -1,13 +1,15 @@
 <template>
-    <div class="header" style="background-color:black;">
-        <h1 style="color:white;">kurimaru</h1>
-        <router-link v-bind:to="{name: 'article.create'}">
-        <button class="btn btn-success">ADD</button>
-        </router-link>
-
+  <div>
+    <div class="jumbotron jumbotron-fluid" 
+    style="background-image: url('/img/flower.jpeg'); background-repeat:no-repeat; background-size:cover;">
+      <div class="container" style="color:white;">
+        <h1 class="display-4">Kurimaru Engineering</h1>
+        <p class="lead">Kurimaruのプログラミング情報ポータルサイト</p>
     </div>
- </template>
+</div>
+  </div>
+</template>
  
  <script>
-     export default {}
- </script>
+export default {};
+</script>
