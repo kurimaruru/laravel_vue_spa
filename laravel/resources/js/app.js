@@ -5,9 +5,11 @@ import router from './router'
 
 import ExampleComponent from "./components/ExampleComponent.vue";
 import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from "./components/FooterComponent.vue";
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('header-component',HeaderComponent);
+Vue.component('footer-component',FooterComponent);
 
 
 
