@@ -284,6 +284,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -385,6 +393,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -1167,7 +1178,9 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("router-link", { attrs: { to: { name: "article.create" } } }, [
-          _c("button", { staticClass: "btn btn-success" }, [_vm._v("ADD")])
+          _c("button", { staticClass: "btn btn-success" }, [
+            _vm._v("create new article")
+          ])
         ])
       ],
       1
@@ -1266,38 +1279,24 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-sm-3 col-form-label",
-                  attrs: { for: "content" }
-                },
-                [_vm._v("Content")]
-              ),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
+            _c(
+              "div",
+              { staticClass: "form-group row" },
+              [
+                _c("mavon-editor", {
+                  staticClass: "col-sm-9 form-control",
+                  attrs: { language: "ja" },
+                  model: {
                     value: _vm.article.content,
+                    callback: function($$v) {
+                      _vm.$set(_vm.article, "content", $$v)
+                    },
                     expression: "article.content"
                   }
-                ],
-                staticClass: "col-sm-9 form-control",
-                attrs: { type: "text", id: "content" },
-                domProps: { value: _vm.article.content },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.article, "content", $event.target.value)
-                  }
-                }
-              })
-            ]),
+                })
+              ],
+              1
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "form-group row" }, [
               _c(
@@ -1559,36 +1558,6 @@ var render = function() {
           _c("div", { staticClass: "form-group row border-bottom" }, [
             _c(
               "label",
-              { staticClass: "col-sm-3 col-form-label", attrs: { for: "id" } },
-              [_vm._v("ID")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.article.id,
-                  expression: "article.id"
-                }
-              ],
-              staticClass: "col-sm-9 form-control-plaintext",
-              attrs: { type: "text", readonly: "", id: "id" },
-              domProps: { value: _vm.article.id },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.article, "id", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group row border-bottom" }, [
-            _c(
-              "label",
               {
                 staticClass: "col-sm-3 col-form-label",
                 attrs: { for: "title" }
@@ -1619,38 +1588,28 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group row border-bottom" }, [
-            _c(
-              "label",
-              {
-                staticClass: "col-sm-3 col-form-label",
-                attrs: { for: "content" }
-              },
-              [_vm._v("Content")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+          _c(
+            "div",
+            { staticClass: "form-group row border-bottom" },
+            [
+              _c("mavon-editor", {
+                attrs: {
+                  language: "ja",
+                  subfield: false,
+                  defaultOpen: "preview",
+                  toolbars: false
+                },
+                model: {
                   value: _vm.article.content,
+                  callback: function($$v) {
+                    _vm.$set(_vm.article, "content", $$v)
+                  },
                   expression: "article.content"
                 }
-              ],
-              staticClass: "col-sm-9 form-control-plaintext",
-              attrs: { type: "text", readonly: "", id: "content" },
-              domProps: { value: _vm.article.content },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.article, "content", $event.target.value)
-                }
-              }
-            })
-          ]),
+              })
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "form-group row border-bottom" }, [
             _c(

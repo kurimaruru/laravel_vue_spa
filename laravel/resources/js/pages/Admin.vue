@@ -39,7 +39,7 @@
         <button type="button" @click="logout" class="btn btn-primary">ログアウト</button>
       </div>
       <router-link v-bind:to="{name: 'article.create'}">
-        <button class="btn btn-success">ADD</button>
+        <button class="btn btn-success">create new article</button>
       </router-link>
   </div>
     </div>
