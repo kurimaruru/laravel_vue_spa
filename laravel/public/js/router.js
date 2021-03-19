@@ -125,6 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -159,10 +160,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -260,14 +257,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -427,6 +416,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     articleId: String
@@ -440,7 +434,7 @@ __webpack_require__.r(__webpack_exports__);
     getArticle: function getArticle() {
       var _this = this;
 
-      axios.get('/api/articles/' + this.articleId).then(function (res) {
+      axios.get("/api/articles/" + this.articleId).then(function (res) {
         _this.article = res.data;
       });
     }
@@ -1001,7 +995,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container p-4" }, [
+    _c("h1", [_vm._v("Articles")]),
+    _vm._v(" "),
     _c("table", { staticClass: "table table-hover" }, [
       _vm._m(0),
       _vm._v(" "),
@@ -1011,7 +1007,9 @@ var render = function() {
           return _c("tr", { key: index }, [
             _c("td", [_vm._v(_vm._s(article.title))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(article.content))]),
+            _c("td", [
+              _vm._v(_vm._s(_vm._f("moment")(article.created_at, "YYYY/MM/DD")))
+            ]),
             _vm._v(" "),
             _c(
               "td",
@@ -1047,11 +1045,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "thead-light" }, [
+    return _c("thead", { staticClass: "thead-dark" }, [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Content")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("created")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")])
       ])
@@ -1090,10 +1088,6 @@ var render = function() {
             _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(article.id))]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(article.title))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(article.content))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(article.person_in_charge))]),
             _vm._v(" "),
             _c(
               "td",
@@ -1197,10 +1191,6 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Content")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Person In Charge")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")]),
         _vm._v(" "),
@@ -1551,102 +1541,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-sm-6" }, [
-        _c("form", [
-          _c("div", { staticClass: "form-group row border-bottom" }, [
-            _c(
-              "label",
-              {
-                staticClass: "col-sm-3 col-form-label",
-                attrs: { for: "title" }
-              },
-              [_vm._v("Title")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.article.title,
-                  expression: "article.title"
-                }
-              ],
-              staticClass: "col-sm-9 form-control-plaintext",
-              attrs: { type: "text", readonly: "", id: "title" },
-              domProps: { value: _vm.article.title },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.article, "title", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "form-group row border-bottom" },
-            [
-              _c("mavon-editor", {
-                attrs: {
-                  language: "ja",
-                  subfield: false,
-                  defaultOpen: "preview",
-                  toolbars: false
-                },
-                model: {
-                  value: _vm.article.content,
-                  callback: function($$v) {
-                    _vm.$set(_vm.article, "content", $$v)
-                  },
-                  expression: "article.content"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group row border-bottom" }, [
-            _c(
-              "label",
-              {
-                staticClass: "col-sm-3 col-form-label",
-                attrs: { for: "person-in-charge" }
-              },
-              [_vm._v("Person In Charge")]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.article.person_in_charge,
-                  expression: "article.person_in_charge"
-                }
-              ],
-              staticClass: "col-sm-9 form-control-plaintext",
-              attrs: { type: "text", readonly: "", id: "person-in-charge" },
-              domProps: { value: _vm.article.person_in_charge },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.article, "person_in_charge", $event.target.value)
-                }
-              }
-            })
-          ])
-        ])
-      ])
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "container-fluid" },
+    [
+      _c("mavon-editor", {
+        attrs: {
+          language: "ja",
+          subfield: false,
+          defaultOpen: "preview",
+          toolbars: false
+        },
+        model: {
+          value: _vm.article.content,
+          callback: function($$v) {
+            _vm.$set(_vm.article, "content", $$v)
+          },
+          expression: "article.content"
+        }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

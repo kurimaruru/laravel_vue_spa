@@ -5,8 +5,6 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Title</th>
-          <th scope="col">Content</th>
-          <th scope="col">Person In Charge</th>
           <th scope="col">Show</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
@@ -16,8 +14,6 @@
       <tr v-for="(article,index) in articles" :key="index">
           <th scope="row">{{ article.id }}</th>
           <td>{{ article.title }}</td>
-          <td>{{ article.content }}</td>
-          <td>{{ article.person_in_charge }}</td>
           <td>
               <router-link v-bind:to="{name: 'article.show', params: {articleId: article.id }}">
                   <button class="btn btn-primary">Show</button>

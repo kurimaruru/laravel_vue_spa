@@ -1,6 +1,14 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
+  <div class="container-fluid">
+    <mavon-editor
+      language="ja"
+      v-model="article.content"
+      :subfield="false"
+      defaultOpen="preview"
+      :toolbars="false"
+    >
+    </mavon-editor>
+    <!-- <div class="row justify-content-center">
             <div class="col-sm-6">
                 <form>
                     <div class="form-group row border-bottom">
@@ -9,9 +17,6 @@
                                v-model="article.title">
                     </div>
                     <div class="form-group row border-bottom">
-                        <!-- <label for="content" class="col-sm-3 col-form-label">Content</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="content"
-                               v-model="article.content"> -->
                         <mavon-editor 
                         language="ja"
                         v-model="article.content"
@@ -28,30 +33,29 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
+        </div> -->
+  </div>
 </template>
 
 <script>
-    export default {
-        props: {
-            articleId: String
-        },
-        data: function(){
-            return{
-                article: {}
-            }
-        },
-        methods: {
-            getArticle(){
-                axios.get('/api/articles/' + this.articleId)
-                    .then((res) =>{
-                        this.article = res.data;
-                    });
-            }
-        },
-        mounted(){
-            this.getArticle();
-        }
-    }
+export default {
+  props: {
+    articleId: String,
+  },
+  data: function () {
+    return {
+      article: {},
+    };
+  },
+  methods: {
+    getArticle() {
+      axios.get("/api/articles/" + this.articleId).then((res) => {
+        this.article = res.data;
+      });
+    },
+  },
+  mounted() {
+    this.getArticle();
+  },
+};
 </script>

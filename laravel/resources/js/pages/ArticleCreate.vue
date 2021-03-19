@@ -9,14 +9,6 @@
                         <input type="text" class="col-sm-9 form-control" id="title" v-model="article.title">
                     </div>
                     <div class="form-group row">
-                        <!-- <label for="content" class="col-sm-3 col-form-label">Content</label>
-                        <textarea 
-                        type="textarea" 
-                        class="col-sm-9 form-control" 
-                        id="content" 
-                        v-model="article.content"
-                        >
-                        </textarea> -->
                         <mavon-editor language="ja" v-model="article.content" class="col-sm-9 form-control"></mavon-editor>
                     </div>
                     <div class="form-group row">
