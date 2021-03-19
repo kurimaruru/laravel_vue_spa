@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-5">
     <mavon-editor
       language="ja"
       v-model="article.content"
