@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-4">
+  <div class="container p-5">
     <h1>Articles</h1>
      <table class="table table-hover">
       <thead class="thead-dark">

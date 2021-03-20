@@ -6,34 +6,9 @@
       :subfield="false"
       defaultOpen="preview"
       :toolbars="false"
+      style="font-family: 'Noto Serif JP', serif"
     >
     </mavon-editor>
-    <!-- <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <form>
-                    <div class="form-group row border-bottom">
-                        <label for="title" class="col-sm-3 col-form-label">Title</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="title"
-                               v-model="article.title">
-                    </div>
-                    <div class="form-group row border-bottom">
-                        <mavon-editor 
-                        language="ja"
-                        v-model="article.content"
-                        :subfield="false"
-                        defaultOpen="preview"
-                        :toolbars="false"
-
-                        ></mavon-editor>
-                    </div>
-                    <div class="form-group row border-bottom">
-                        <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="person-in-charge"
-                               v-model="article.person_in_charge">
-                    </div>
-                </form>
-            </div>
-        </div> -->
   </div>
 </template>
 

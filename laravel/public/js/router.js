@@ -403,31 +403,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     articleId: String
@@ -1002,7 +977,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container p-4" }, [
+  return _c("div", { staticClass: "container p-5" }, [
     _c("h1", [_vm._v("Articles")]),
     _vm._v(" "),
     _c("table", { staticClass: "table table-hover" }, [
@@ -1541,6 +1516,7 @@ var render = function() {
     { staticClass: "container-fluid p-5" },
     [
       _c("mavon-editor", {
+        staticStyle: { "font-family": "'Noto Serif JP', serif" },
         attrs: {
           language: "ja",
           subfield: false,
