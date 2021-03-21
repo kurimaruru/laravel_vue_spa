@@ -10,6 +10,9 @@
             <img src="/img/vue.jpeg" alt="vue">
         </slide>
         <slide>
+            <img src="/img/php.jpeg" alt="php">
+        </slide>
+        <slide>
             <img src="/img/java.jpeg" alt="java">
         </slide>
         <slide>
@@ -19,7 +22,10 @@
             <img src="/img/github.jpeg" alt="github">
         </slide>
         <slide>
-            <img src="/img/bootstrap.jpeg" alt="boostrap">
+            <img src="/img/html.jpeg" alt="html">
+        </slide>
+        <slide>
+            <img src="/img/bootstrap.jpeg" alt="bootstrap">
         </slide>
       </carousel>
     </div>

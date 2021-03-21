@@ -3,7 +3,7 @@
     <div class="row" style="border-bottom: solid 1px black">
       <div class="col-7 col-md-4" style="margin: 0 auto"
       v-observe-visibility="visibilityChangedco"
-      v-bind:class="[isVisibleco === true ? 'fade2' : 'a']"
+      v-bind:class="[isVisibleco === true ? 'fade4' : 'a']"
       >
         <img src="/img/profile.jpeg" alt="profile" class="rounded-circle" style="padding:0 0 10px 20px;"/>
       </div>
@@ -14,9 +14,9 @@
         v-bind:class="[isVisible05 === true ? 'fade3' : 'a']"
         >
           <h1 style="border-bottom: solid 1px black">Profile</h1>
-          <h3>Kurimaru</h3>
+          <h3>Kurichan</h3>
           <p style="padding-right:25px;">
-            &nbsp;&nbsp;&nbsp;&nbsp;KurimaruBlogを拝見して頂きありがとうございます。私は文系大学教育学部出身のSEです。
+            &nbsp;&nbsp;&nbsp;&nbsp;KurichanBlogを拝見して頂きありがとうございます。私は文系大学教育学部出身のSEです。
             大学４年の6月ごろプログラミングに興味を持ち、PCスキル０の状態から勉強を始めました。
             Education × Technology
             (EdTech)に興味があるので、将来的にはそのようなシステムやアプリを開発したいと考えています。
@@ -27,7 +27,7 @@
         </div>
         <div class="qualify" 
         v-observe-visibility="visibilityChangedco"
-        v-bind:class="[isVisibleco === true ? 'fade2' : 'a']"
+        v-bind:class="[isVisibleco === true ? 'fade2' : '']"
         >
           <h3>Qualification</h3>
           <ul style="list-style:none;">

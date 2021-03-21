@@ -1,12 +1,12 @@
 <template>
-  <div class="container p-5">
+  <div class="container p-5" style="font-family: 'Noto Serif JP', serif;">
     <h1>Articles</h1>
      <table class="table table-hover">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Title</th>
           <th scope="col">created</th>
-          <th scope="col">Show</th>
+          <th scope="col">Read</th>
         </tr>
       </thead>
       <tbody>
@@ -20,7 +20,7 @@
                 params: { articleId: article.id },
               }"
             >
-              <button class="btn btn-primary">Show</button>
+              <button class="btn btn-primary">Read</button>
             </router-link>
           </td>
         </tr>

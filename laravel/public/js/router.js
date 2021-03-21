@@ -977,50 +977,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container p-5" }, [
-    _c("h1", [_vm._v("Articles")]),
-    _vm._v(" "),
-    _c("table", { staticClass: "table table-hover" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    {
+      staticClass: "container p-5",
+      staticStyle: { "font-family": "'Noto Serif JP', serif" }
+    },
+    [
+      _c("h1", [_vm._v("Articles")]),
       _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.articles, function(article, index) {
-          return _c("tr", { key: index }, [
-            _c("td", [_vm._v(_vm._s(article.title))]),
-            _vm._v(" "),
-            _c("td", [
-              _vm._v(_vm._s(_vm._f("moment")(article.created_at, "YYYY/MM/DD")))
-            ]),
-            _vm._v(" "),
-            _c(
-              "td",
-              [
-                _c(
-                  "router-link",
-                  {
-                    attrs: {
-                      to: {
-                        name: "article.show",
-                        params: { articleId: article.id }
-                      }
-                    }
-                  },
-                  [
-                    _c("button", { staticClass: "btn btn-primary" }, [
-                      _vm._v("Show")
-                    ])
-                  ]
+      _c("table", { staticClass: "table table-hover" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.articles, function(article, index) {
+            return _c("tr", { key: index }, [
+              _c("td", [_vm._v(_vm._s(article.title))]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  _vm._s(_vm._f("moment")(article.created_at, "YYYY/MM/DD"))
                 )
-              ],
-              1
-            )
-          ])
-        }),
-        0
-      )
-    ])
-  ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "td",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "article.show",
+                          params: { articleId: article.id }
+                        }
+                      }
+                    },
+                    [
+                      _c("button", { staticClass: "btn btn-primary" }, [
+                        _vm._v("Read")
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          }),
+          0
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -1033,7 +1042,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("created")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Read")])
       ])
     ])
   }

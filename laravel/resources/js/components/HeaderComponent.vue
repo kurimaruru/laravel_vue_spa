@@ -8,11 +8,11 @@
         <h1 class="display-4" style="text-align:center;"
         v-observe-visibility="visibilityChangedco"
         v-bind:class="[isVisibleco === true ? 'fade1' : 'a']"
-        >Kurimaru Engineering</h1><br>
+        >Kurichan Engineering</h1><br>
         <p class="lead" style="text-align:center;"
         v-observe-visibility="visibilityChangedco"
         v-bind:class="[isVisibleco === true ? 'fade2' : 'a']"
-        >〜KurimaruのプログラミングBlog〜</p><br>
+        >〜KurichanのプログラミングBlog〜</p><br>
         <p style="text-align:center;"
         v-observe-visibility="visibilityChangedco"
         v-bind:class="[isVisibleco === true ? 'fade1' : 'a']"

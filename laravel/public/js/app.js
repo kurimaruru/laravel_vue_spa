@@ -330,6 +330,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2796,50 +2802,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container p-5" }, [
-    _c("h1", [_vm._v("Articles")]),
-    _vm._v(" "),
-    _c("table", { staticClass: "table table-hover" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    {
+      staticClass: "container p-5",
+      staticStyle: { "font-family": "'Noto Serif JP', serif" }
+    },
+    [
+      _c("h1", [_vm._v("Articles")]),
       _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.articles, function(article, index) {
-          return _c("tr", { key: index }, [
-            _c("td", [_vm._v(_vm._s(article.title))]),
-            _vm._v(" "),
-            _c("td", [
-              _vm._v(_vm._s(_vm._f("moment")(article.created_at, "YYYY/MM/DD")))
-            ]),
-            _vm._v(" "),
-            _c(
-              "td",
-              [
-                _c(
-                  "router-link",
-                  {
-                    attrs: {
-                      to: {
-                        name: "article.show",
-                        params: { articleId: article.id }
-                      }
-                    }
-                  },
-                  [
-                    _c("button", { staticClass: "btn btn-primary" }, [
-                      _vm._v("Show")
-                    ])
-                  ]
+      _c("table", { staticClass: "table table-hover" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.articles, function(article, index) {
+            return _c("tr", { key: index }, [
+              _c("td", [_vm._v(_vm._s(article.title))]),
+              _vm._v(" "),
+              _c("td", [
+                _vm._v(
+                  _vm._s(_vm._f("moment")(article.created_at, "YYYY/MM/DD"))
                 )
-              ],
-              1
-            )
-          ])
-        }),
-        0
-      )
-    ])
-  ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "td",
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "article.show",
+                          params: { articleId: article.id }
+                        }
+                      }
+                    },
+                    [
+                      _c("button", { staticClass: "btn btn-primary" }, [
+                        _vm._v("Read")
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          }),
+          0
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -2852,7 +2867,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("created")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Read")])
       ])
     ])
   }
@@ -2899,7 +2914,10 @@ var staticRenderFns = [
                 "a",
                 {
                   staticClass: "btn btn-outline-light btn-floating m-1",
-                  attrs: { href: "#!", role: "button" }
+                  attrs: {
+                    href: "https://twitter.com/fBwAJiTLk2dLXyK",
+                    role: "button"
+                  }
                 },
                 [_c("i", { staticClass: "fab fa-twitter" })]
               ),
@@ -2908,7 +2926,10 @@ var staticRenderFns = [
                 "a",
                 {
                   staticClass: "btn btn-outline-light btn-floating m-1",
-                  attrs: { href: "#!", role: "button" }
+                  attrs: {
+                    href: "https://github.com/kurimaruru",
+                    role: "button"
+                  }
                 },
                 [_c("i", { staticClass: "fab fa-github" })]
               )
@@ -2917,174 +2938,18 @@ var staticRenderFns = [
             _c("section", { staticClass: "mb-4" }, [
               _c("p", [
                 _vm._v(
-                  "\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt\n          distinctio earum repellat quaerat voluptatibus placeat nam, commodi\n          optio pariatur est quia magnam eum harum corrupti dicta, aliquam\n          sequi voluptate quas.\n        "
+                  "\n          Thank you for looking at my blog.    If you don't mind, please look at my Twitter account and Github account.\n        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n          I hope you will continue to visit this blog.\n        "
                 )
               ])
             ]),
             _vm._v(" "),
-            _c("section", {}, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
-                  _c("h5", { staticClass: "text-uppercase" }, [
-                    _vm._v("Links")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 1")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 2")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 3")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 4")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
-                  _c("h5", { staticClass: "text-uppercase" }, [
-                    _vm._v("Links")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 1")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 2")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 3")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 4")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
-                  _c("h5", { staticClass: "text-uppercase" }, [
-                    _vm._v("Links")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 1")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 2")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 3")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 4")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-lg-3 col-md-6 mb-4 mb-md-0" }, [
-                  _c("h5", { staticClass: "text-uppercase" }, [
-                    _vm._v("Links")
-                  ]),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 1")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 2")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 3")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c(
-                        "a",
-                        { staticClass: "text-white", attrs: { href: "#!" } },
-                        [_vm._v("Link 4")]
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ])
+            _c("section", {}, [_c("div", { staticClass: "row" })])
           ]),
           _vm._v(" "),
           _c(
@@ -3093,17 +2958,7 @@ var staticRenderFns = [
               staticClass: "text-center p-3",
               staticStyle: { "background-color": "rgba(0, 0, 0, 0.2)" }
             },
-            [
-              _vm._v("\n      © 2020 Copyright:\n      "),
-              _c(
-                "a",
-                {
-                  staticClass: "text-white",
-                  attrs: { href: "https://mdbootstrap.com/" }
-                },
-                [_vm._v("MDBootstrap.com")]
-              )
-            ]
+            [_vm._v("\n      © 2020 Copyright:\n    ")]
           )
         ])
       ]
@@ -3163,7 +3018,7 @@ var render = function() {
                 class: [_vm.isVisibleco === true ? "fade1" : "a"],
                 staticStyle: { "text-align": "center" }
               },
-              [_vm._v("Kurimaru Engineering")]
+              [_vm._v("Kurichan Engineering")]
             ),
             _c("br"),
             _vm._v(" "),
@@ -3182,7 +3037,7 @@ var render = function() {
                 class: [_vm.isVisibleco === true ? "fade2" : "a"],
                 staticStyle: { "text-align": "center" }
               },
-              [_vm._v("〜KurimaruのプログラミングBlog〜")]
+              [_vm._v("〜KurichanのプログラミングBlog〜")]
             ),
             _c("br"),
             _vm._v(" "),
@@ -3261,7 +3116,7 @@ var render = function() {
                 }
               ],
               staticClass: "col-7 col-md-4",
-              class: [_vm.isVisibleco === true ? "fade2" : "a"],
+              class: [_vm.isVisibleco === true ? "fade4" : "a"],
               staticStyle: { margin: "0 auto" }
             },
             [
@@ -3297,11 +3152,11 @@ var render = function() {
                   [_vm._v("Profile")]
                 ),
                 _vm._v(" "),
-                _c("h3", [_vm._v("Kurimaru")]),
+                _c("h3", [_vm._v("Kurichan")]),
                 _vm._v(" "),
                 _c("p", { staticStyle: { "padding-right": "25px" } }, [
                   _vm._v(
-                    "\n              KurimaruBlogを拝見して頂きありがとうございます。私は文系大学教育学部出身のSEです。\n          大学４年の6月ごろプログラミングに興味を持ち、PCスキル０の状態から勉強を始めました。\n          Education × Technology\n          (EdTech)に興味があるので、将来的にはそのようなシステムやアプリを開発したいと考えています。\n        "
+                    "\n              KurichanBlogを拝見して頂きありがとうございます。私は文系大学教育学部出身のSEです。\n          大学４年の6月ごろプログラミングに興味を持ち、PCスキル０の状態から勉強を始めました。\n          Education × Technology\n          (EdTech)に興味があるので、将来的にはそのようなシステムやアプリを開発したいと考えています。\n        "
                   )
                 ]),
                 _vm._v(" "),
@@ -3325,7 +3180,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "qualify",
-                class: [_vm.isVisibleco === true ? "fade2" : "a"]
+                class: [_vm.isVisibleco === true ? "fade2" : ""]
               },
               [_c("h3", [_vm._v("Qualification")]), _vm._v(" "), _vm._m(0)]
             )
@@ -3401,6 +3256,10 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("slide", [
+              _c("img", { attrs: { src: "/img/php.jpeg", alt: "php" } })
+            ]),
+            _vm._v(" "),
+            _c("slide", [
               _c("img", { attrs: { src: "/img/java.jpeg", alt: "java" } })
             ]),
             _vm._v(" "),
@@ -3413,8 +3272,12 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("slide", [
+              _c("img", { attrs: { src: "/img/html.jpeg", alt: "html" } })
+            ]),
+            _vm._v(" "),
+            _c("slide", [
               _c("img", {
-                attrs: { src: "/img/bootstrap.jpeg", alt: "boostrap" }
+                attrs: { src: "/img/bootstrap.jpeg", alt: "bootstrap" }
               })
             ])
           ],
